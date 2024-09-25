@@ -10,3 +10,8 @@ target_link_libraries(admin m)
 
 add_executable(admin-scanf admin-scanf.c)
 target_link_libraries(admin-scanf m)
+
+add_executable(printf-error printf-error.c)
+add_executable(scanf-error scanf-error.c)
+
+add_executable(scanf-c17-ex3 scanf-c17-ex3.c)
