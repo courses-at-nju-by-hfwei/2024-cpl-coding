@@ -11,6 +11,8 @@ int main(void) {
   char last_name[] = "Lo";
 
   char gender = 'm';
+  // char upper_gender = 'm' + 'A' - 'a';
+  // printf("upper_gender : %c\n", upper_gender);
 
   int birth_year = 1954;
   int birth_month = 7;
@@ -28,11 +30,11 @@ int main(void) {
 
   int rank = 10;
 
-  printf("%s\t%s\t%c\n"
-         "%d-%d-%d\t%s\n"
-         "%d\t%d\t%d\n"
-         "%f\t%f\t%d\n",
-         first_name, last_name, gender,
+  printf("%s %s \t %c\n"
+         "%.2d-%d-%d \t %.3s.\n"
+         "%d \t %d \t %d\n"
+         "%.1f \t %.2f \t %d%%\n",
+         first_name, last_name, toupper(gender),
          birth_month, birth_day, birth_year, weekday,
          c_score, music_score, medicine_score,
          mean, sd, rank);

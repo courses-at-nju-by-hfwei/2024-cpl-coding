@@ -1,13 +1,11 @@
-//
 // Created by hfwei on 2024/9/25.
-//
 
 #include <stdio.h>
 
 // Example 3 from C17 (Page 234)
 int main(void) {
   int count = -2;
-  double quant = -1; // original: float quant;
+  double quant = -1;
   char units[21] = "";
   char item[21] = "";
 
@@ -20,10 +18,10 @@ int main(void) {
   //     dirt
   // 100ergs of energy
   do {
-    count = fscanf(stdin,
-                   "%lf%20s of %20s",
+    count = scanf( "%lf%20s of %20s",
                    &quant, units, item);
-    fscanf(stdin, "%*[^\n]");
+    scanf("%*[^\n]");
+
     // added
     printf("count = %d\n"
            "quant = %f\n"
