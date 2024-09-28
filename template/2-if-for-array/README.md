@@ -1,5 +1,11 @@
 # `2-if-for-array`
 
+## Additional
+
+- `Settings` => `Code Style` (Google)
+- `Settings` => `Action on Save` (Formatting Code)
+- TODO (hfwei): CLion code template
+
 ## `min-of-two.c`
 
 - `if-else`
@@ -51,8 +57,34 @@
   - `if`: without `else`
   - `int leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);`
   - `?:` in `printf`
- 
-## Additional
-- `Settings` => `Code Style` (Google)
-- `Settings` => `Action on Save` (Formatting Code)
-- TODO (hfwei): CLion code template
+
+## `min-array.c`
+
+- `array`
+  - `array initializer` (初始化器)
+  - What if uninitialized? (garbage in, garbage out)
+  - designator (Since C99)
+  - `int n[5] = {[4]=5,[0]=1,2,3,4}; // holds 1,2,3,4,5`
+  ```C
+    int a[MAX] = { // starts initializing a[0] = 1, a[1] = 3, ...
+      1, 3, 5, 7, 9, [MAX-5] = 8, 6, 4, 2, 0
+    };
+  ```
+- `const int NUM`
+- `#define NUM 5`
+- `for`
+  - syntax
+    - `for (init-clause; condition-expression; iteration-expression) loop-statement`
+  - semantics (CLion debug!!!)
+    - (1): []
+    - (2): i < NUM: not i <= NUM (accessing out-of-bounds; 访问越界)
+    - (3): int i = 1; since C99 (declaration in for-loop); code in standard C library
+
+## `min-array-input.c`
+
+- `array` initializer
+  - designator
+  - What if uninitialized?
+- input an array
+  - `&numbers[i]`: lvalue
+  - what if `n (NUM)` is known???
