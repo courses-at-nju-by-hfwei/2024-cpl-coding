@@ -1,31 +1,33 @@
-//
 // Created by hfwei on 2024/9/25.
-//
 
 #include <stdio.h>
 
 int main(void) {
   /*
-   * (1) double
+   * (scanf-ub-1)
    */
-  double d;
-  scanf("%f", &d);
-  printf("d = %f\n", d);
+  double pi;
+  printf("Enter the value of pi:\n");
+  scanf("%f", &pi);
+  printf("pi = %f\n", pi);
 
   /*
-   * (2) using the value of uninitialized variable
+   * (scanf-ub-2)
+   * enter "10000000000000000000" (19 0's)
    */
   int age;
-  printf("Enter your age: ");
+  printf("Enter your age:\n");
   scanf("%d", &age);
   printf("Your age is %d.\n", age);
 
   /*
-   * (3) long string
-   * segmentation fault: buffer overflow: Process finished with exit code -1073741819 (0xC0000005)
+   * (scanf-ub-3)
+   * enter a long string
+   * Linux: *** stack smashing detected *** terminated
+   * Aborted
    */
-  char name[12];
-  printf("What's your name? ");
+  char name[6];
+  printf("What's your name?\n");
   scanf("%s", name);
   printf("Hello %s!\n", name);
 

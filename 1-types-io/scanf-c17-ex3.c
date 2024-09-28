@@ -4,8 +4,8 @@
 
 // Example 3 from C17 (Page 234)
 int main(void) {
-  int count = -2;
-  double quant = -1;
+  int count = 0;
+  double quant = 0;
   char units[21] = "";
   char item[21] = "";
 
@@ -18,8 +18,8 @@ int main(void) {
   //     dirt
   // 100ergs of energy
   do {
-    count = scanf( "%lf%20s of %20s",
-                   &quant, units, item);
+    count = scanf("%lf%20s of %20s",
+                  &quant, units, item);
     scanf("%*[^\n]");
 
     // added
