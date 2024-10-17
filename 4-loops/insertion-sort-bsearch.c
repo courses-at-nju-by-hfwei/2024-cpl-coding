@@ -25,6 +25,7 @@ int main() {
   // insertion sort with binary search
   for (int i = 1; i < size; i++) {
     int key = numbers[i];
+
     int low = 0;
     int high = i - 1;
 
