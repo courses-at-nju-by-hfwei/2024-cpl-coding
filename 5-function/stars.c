@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 void Print(char ch, int count);
+void NewLine(void);
 
 int main(void) {
   int lines = 0;
@@ -14,6 +15,7 @@ int main(void) {
 
     if (i < lines - 1) {
       printf("\n");
+      NewLine();
     }
   }
 
@@ -24,4 +26,8 @@ void Print(char ch, int count) {
   for (int i = 0; i < count; ++i) {
     printf("%c", ch);
   }
+}
+
+void NewLine(void) {
+  printf("\n");
 }
