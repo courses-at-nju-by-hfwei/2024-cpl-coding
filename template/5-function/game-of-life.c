@@ -91,9 +91,8 @@ int main(void) {
     }
 
     // #include <unistd.h> (Linux, macOS)
+    // <windows.h> Sleep(1000)
     sleep(1);
-    // <windows.h>
-    // Sleep(1000)
 
     // <stdlib.h> (Linux)
     // Windows: stdlib.h (system("cls"))

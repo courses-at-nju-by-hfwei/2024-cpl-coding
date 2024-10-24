@@ -9,12 +9,8 @@ int main(void) {
 
   int count = 0;
 
-  // scope
   // TODO: print primes between 1 and max
   for (int i = 2; i <= max; i++) {
-    // decide if i is a is_prime
-    // _Bool
-    // C99: bool, true (1), false (0)
     bool is_prime = true;
 
     for (int j = 2; j * j <= i; j++) {
@@ -27,10 +23,10 @@ int main(void) {
 
     if (is_prime) {
       count++;
-//      printf("%d ", i);
     }
   }
 
   printf("\n %d ", count);
+
   return 0;
 }

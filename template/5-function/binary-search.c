@@ -18,8 +18,7 @@ int main(void) {
     int mid = (low + high) / 2;
     if (dictionary[mid] == key) {
       index = mid;
-//      break;
-      high = mid - 1;
+      break;
     } else if (dictionary[mid] > key) {
       high = mid - 1;
     } else {

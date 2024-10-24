@@ -5,56 +5,44 @@
 #define LEN 20
 int numbers[LEN] = { 0 };
 
+void SelectionSort(int arr[], int len);
+void Print(const int arr[], int len);
+
 int main(void) {
-  /*
-   * Input the array
-   *
-   * Note: fails to run this program in "Run" (Ctrl + D)
-   * See: https://youtrack.jetbrains.com/issue/CPP-5704
-   * Use "Terminal" instead.
-   *
-   * TODO: CLion; Terminal
-   * Linux: Ctrl + D (works now; in the new line, or Ctrl + D twice)
-   *   See https://stackoverflow.com/a/21365313/1833118 (send and clear the buffer)
-   * Windows: Ctrl + Z (does not work on my platform)
-   * TODO: Input&Output redirection
-   *   See https://stackoverflow.com/a/11788475/1833118
-   */
   int len = -1;
-  // stream
-  // (1) input failure: EOF (-1)
-  // (2) match failure: assigned items >= 0
   while (scanf("%d", &numbers[++len]) != EOF);
 
-  // sizeof numbers / sizeof(numbers[0])
-  for (int i = 0; i < len; i++) {
-    printf("%d ", numbers[i]);
-  }
-  printf("\n");
+  Print(numbers, len);
+  SelectionSort(numbers, len);
+  Print(numbers, len);
 
-  // TODO: selection sort
+  return 0;
+}
+
+void SelectionSort(int arr[], int len) {
   for (int i = 0; i < len; i++) {
-    // find the minimum of numbers[i .. len - 1]
-    int min = numbers[i];
+    // find the minimum value of numbers[i .. n-1]
+    int min = arr[i];
     int min_index = i;
 
-    for (int j = i + 1; j < len; j++) {
-      if (numbers[j] < min) {
-        min = numbers[j];
+    for (int j = i + 1; j <= len - 1; ++j) {
+      if (arr[j] < min) {
+        min = arr[j];
         min_index = j;
       }
     }
 
-    // swap numbers[i] and numbers[min_index]
-    int temp = numbers[min_index];
-    numbers[min_index] = numbers[i];
-    numbers[i] = temp;
+    // swap arr[i] and arr[min_index]
+    int temp = arr[i];
+    arr[i] = arr[min_index];
+    arr[min_index] = temp;
   }
+}
 
+void Print(const int arr[], int len) {
+  printf("\n");
   for (int i = 0; i < len; i++) {
-    printf("%d ", numbers[i]);
+    printf("%d ", arr[i]);
   }
   printf("\n");
-
-  return 0;
 }
