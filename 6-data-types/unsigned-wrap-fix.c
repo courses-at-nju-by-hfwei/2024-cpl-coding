@@ -30,13 +30,19 @@ int main(void) {
   printf("%u * %u = %u\n", left_mul, right_mul, Mul(left_mul, right_mul));
 
   // division
+  unsigned int left_div = 5;
+  unsigned int right_div = 0;
+
+  printf("%u * %u = %u\n", left_div, right_div, Div(left_div, right_div));
+  printf("%u * %u = %u\n", left_div, right_div, Mod(left_div, right_div));
+
+  return 0;
 }
 
 unsigned int Add(unsigned int left, unsigned int right) {
-  //  unsigned int sum = left + right;
-  //  return sum;
+  //  return left + right;
 
-  if (left + right > UINT_MAX) {
+  if (left > UINT_MAX - right) {
     printf("Too Big!\n");
     exit(1);
   } else {
@@ -46,10 +52,9 @@ unsigned int Add(unsigned int left, unsigned int right) {
 }
 
 unsigned int Sub(unsigned int left, unsigned int right) {
-  //  unsigned int sub = left - right;
-  //  return sub;
+  //  return left - right;
 
-  if (left - right < 0) {
+  if (left < right) {
     printf("The result is negative!\n");
     exit(1);
   } else {
@@ -59,10 +64,9 @@ unsigned int Sub(unsigned int left, unsigned int right) {
 }
 
 unsigned int Mul(unsigned int left, unsigned int right) {
-  //  unsigned int mul = left * right;
-  //  return mul;
+  //  return left * right;
 
-  if (left * right > UINT_MAX) {
+  if (left > UINT_MAX / right) {
     printf("The result is negative!\n");
     exit(1);
   } else {
