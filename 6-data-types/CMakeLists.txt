@@ -27,3 +27,5 @@ add_executable(loop loop.c)
 
 add_executable(compare compare.c)
 target_link_libraries(compare m)
+
+add_executable(float-assoc float-assoc.c)
