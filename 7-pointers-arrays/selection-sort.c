@@ -9,9 +9,10 @@
 #define LEN 5
 
 void SelectionSort(int arr[], int len);
-void WrongSwap(int left, int right);
-void Swap(int *left, int *right);
 int GetMinIndex(const int arr[], int begin, int end);
+void WrongSwap(int left, int right);
+void SwapIndex(int arr[], int left_index, int right_index);
+void Swap(int *left, int *right);
 void Print(const int arr[], int len);
 
 int main(void) {
@@ -79,6 +80,12 @@ void Swap(int *left, int *right) {
   int temp = *left;
   *left = *right;
   *right = temp;
+}
+
+void SwapIndex(int arr[], int left_index, int right_index) {
+  int temp = arr[left_index];
+  arr[left_index] = arr[right_index];
+  arr[right_index] = temp;
 }
 
 void Print(const int arr[], int len) {
