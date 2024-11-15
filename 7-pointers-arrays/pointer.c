@@ -36,8 +36,6 @@ int main(void) {
   int *ptr_radius_2 = &radius_2;
 
   ptr_radius_1 = ptr_radius_2;
-  *ptr_radius_2 = 2000;
-  printf("radius_1 = %d\n", *ptr_radius_1);
   /********** On ptr_radius_1 as lvalue and rvalue **********/
 
   /********** On *ptr_radius_1 **********/
@@ -45,14 +43,29 @@ int main(void) {
   // *ptr_radius_1 behaves like radius_1
   *ptr_radius_1 = 200;
   printf("radius_1 = %d\n", radius_1);
+
   circumference = 2 * PI * (*ptr_radius_1);
   /********** On *ptr_radius_1 **********/
 
+  /********** On types of pointers **********/
+  int i = -1;
+
+  unsigned int *ptr_i_double = &i;
+  printf("i = %u\n", *ptr_i_double);
+
+  unsigned int hex = 0x44434241;
+  char *ptr_hex = &hex;
+  printf("i = %c\n", *ptr_hex);
+  printf("i = %c\n", *(ptr_hex + 1));
+  /********** On types of pointers **********/
+
+  /********** On types of pointers (more) **********/
   int v = 100;
   int *pv = &v;
   printf("pv : %p\n *pv : %d\n", pv, *pv);
   pv = &pv;
   printf("pv : %p\n", pv);
+  /********** On types of pointers (more) **********/
 
   return 0;
 }

@@ -10,14 +10,14 @@ int main(void) {
   // https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000740490-Where-did-the-black-windows-go-?page=1#community_comment_115000619510
   //  setbuf(stdout, NULL);
 
-  /********** On radius_1 **********/
+  /********** On radius_1 as lvalue and rvalue **********/
   int radius_1 = 100;
 
   printf("radius_1 = %d\n", radius_1);
 
   double circumference = 2 * PI * radius_1;
   printf("circumference = %f\n", circumference);
-  /********** On radius_1 **********/
+  /********** On radius_1 as lvalue and rvalue **********/
 
   /********** On ptr_radius_1 **********/
   /********** On ptr_radius_1 **********/
@@ -27,6 +27,12 @@ int main(void) {
 
   /********** On *ptr_radius_1 **********/
   /********** On *ptr_radius_1 **********/
+
+  /********** On types of pointers **********/
+  /********** On types of pointers **********/
+
+  /********** On types of pointers (more) **********/
+  /********** On types of pointers (more) **********/
 
   return 0;
 }
