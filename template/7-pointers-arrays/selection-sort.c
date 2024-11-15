@@ -24,7 +24,7 @@ int main(void) {
   return 0;
 }
 
-void SelectionSort(int *arr, int len) {
+void SelectionSort(int arr[], int len) {
   for (int i = 0; i < len; i++) {
     int min_index = GetMinIndex(arr, i, len);
     Swap(arr, i, min_index);
