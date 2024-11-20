@@ -1,4 +1,3 @@
-// file: strlen.c
 // Created by hfwei on 2024/11/20.
 // See https://en.cppreference.com/w/c/string/byte/strlen
 

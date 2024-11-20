@@ -1,7 +1,4 @@
-//
-// file: strcmp.c
-// Created by hfwei on 2022/11/29.
-//
+// Created by hfwei on 2024/11/20.
 
 #include <stdio.h>
 

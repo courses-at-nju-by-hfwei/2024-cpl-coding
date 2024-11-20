@@ -4,5 +4,3 @@ add_executable(strlen strlen.c)
 add_executable(strcpy strcpy.c)
 add_executable(strcmp strcmp.c)
 add_executable(strcat strcat.c)
-
-add_executable(strcmp-benchmark strcmp-benchmark.c)

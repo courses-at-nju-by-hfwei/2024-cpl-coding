@@ -1,6 +1,4 @@
-// file: strcpy.c
-// 7 versions of strcpy
-// Created by hfwei on 2022/11/29.
+// Created by hfwei on 2024/11/20.
 //
 // C Operator Precedence:
 // https://en.cppreference.com/w/c/language/operator_precedence#:~:text=C%20Operator%20Precedence%20%20%20%20Precedence%20,union%20member%20access%20%2028%20more%20rows%20
