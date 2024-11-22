@@ -32,9 +32,9 @@ void StrCpy4(char *dest, const char *src);
 void StrCpy5(char *dest, const char *src);
 void StrCpy6(char *dest, const char *src);
 char *StrCpyStd(char *dest, const char *src);
-char *StrNCpyStd(char *dest, const char *src, size_t n) {
+char *StrNCpyStd(char *dest, const char *src, size_t n);
 
-int main() {
+int main(void) {
   const char *src = "Hello World";
   // VLA (Do not use it; it is optional since C11)
   // char dest[strlen(src) + 1];
