@@ -9,6 +9,11 @@ int StrCmpGLibC(const char *p1, const char *p2);
 int StrNCmpStd(const char *s1, const char *s2, int n);
 
 int main() {
+  unsigned char x = 65;
+  unsigned char y = 66;
+  int diff = x - y;
+  printf("%d", diff);
+
   const char *str1 = "hi, C";
   const char *str2 = "hi, c";
 
