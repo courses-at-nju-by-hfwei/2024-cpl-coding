@@ -13,4 +13,6 @@ add_subdirectory(6-data-types)
 add_subdirectory(7-pointers-arrays)
 add_subdirectory(8-pointers-c-strings)
 add_subdirectory(9-double-pointers)
+add_subdirectory(10-function-pointers)
+
 add_subdirectory(7-recursion)
