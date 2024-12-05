@@ -6,7 +6,8 @@
 typedef int (*cmp_func_t)(const void *a, const void *b);
 
 // See https://elixir.bootlin.com/linux/latest/source/include/linux/bsearch.h#L8
-void *bsearch(const void *key, const void *base,
+void *bsearch(const void *key,
+              const void *base,
               size_t num, size_t size, cmp_func_t cmp);
 
 int main(void) {
@@ -14,7 +15,9 @@ int main(void) {
   return 0;
 }
 
-void *bsearch(const void *key, const void *base, size_t num, size_t size, cmp_func_t cmp) {
+void *bsearch(const void *key,
+              const void *base, size_t num, size_t size,
+              cmp_func_t cmp) {
   const char *pivot;
   int result;
 
