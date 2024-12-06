@@ -20,6 +20,8 @@ int CompareInts(const void *left, const void *right);
 int CompareStrs(const void *left, const void *right);
 int CompareStrsWrong(const void *left, const void *right);
 
+int StrCmpStd(const char *s1, const char *s2);
+
 void PrintInts(const int *integers, size_t len);
 void PrintStrs(const char *str[], size_t len);
 
@@ -111,6 +113,21 @@ int CompareStrsWrong(const void *left, const void *right) {
   const char *pp1 = left;
   const char *pp2 = right;
   return strcmp(pp1, pp2);
+}
+
+int StrCmpStd(const char *s1, const char *s2) {
+  for (; *s1 == *s2; s1++, s2++) {
+    if (*s1 == '\0') {
+      return 0;
+    }
+  }
+
+  // just for debug
+  const unsigned char s1_char = *((const unsigned char *) s1);
+  const unsigned char s2_char = *((const unsigned char *) s2);
+
+  return *((const unsigned char *) s1) -
+      *((const unsigned char *) s2);
 }
 
 void PrintInts(const int *integers, size_t len) {

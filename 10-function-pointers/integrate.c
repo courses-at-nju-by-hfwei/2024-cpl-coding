@@ -19,7 +19,7 @@ int main() {
   // gcc -pedantic (invalid application of sizeof to a function type)
   // See "Function to pointer conversion" (https://en.cppreference.com/w/c/language/conversion)
   // See also https://en.cppreference.com/w/c/language/sizeof
-  printf("sizeof sin: %zu\n", sizeof sin);
+  printf("sizeof sin: %zu\n", sizeof sin);  // not allowed
   printf("sizeof &sin: %zu\n", sizeof &sin);
 
   integration = Integrate(low, high, sin);

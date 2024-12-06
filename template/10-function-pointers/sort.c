@@ -8,6 +8,8 @@
 void PrintInts(const int integers[], size_t len);
 void PrintStrs(const char *str[], size_t len);
 
+int StrCmpStd(const char *s1, const char *s2);
+
 int main() {
   int integers[] = {-2, 99, 0, -743, 2, INT_MIN, 4};
   int size_of_integers = sizeof integers / sizeof *integers;
@@ -33,6 +35,20 @@ int main() {
   PrintStrs(names, size_of_names);
   // TODO: Sort strings using qsort
   PrintStrs(names, size_of_names);
+}
+
+int StrCmpStd(const char *s1, const char *s2) {
+  for (; *s1 == *s2; s1++, s2++) {
+    if (*s1 == '\0') {
+      return 0;
+    }
+  }
+
+  const unsigned char s1_char = *((const unsigned char *) s1);
+  const unsigned char s2_char = *((const unsigned char *) s2);
+
+  return *((const unsigned char *) s1) -
+      *((const unsigned char *) s2);
 }
 
 void PrintInts(const int integers[], size_t len) {
