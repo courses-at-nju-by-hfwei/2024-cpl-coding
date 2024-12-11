@@ -1,0 +1,4 @@
+add_executable(musician musician.c)
+add_executable(padding offset.c)
+add_executable(sds sds.c)
+add_executable(sds-202412 sds-202412.c)
