@@ -1,8 +1,9 @@
-//
-// Created by hfwei on 2023/11/15.
-//
+// Created by hfwei on 2024/12/25.
+// Visualizatin: https://tinyurl.com/mergesort-re (for LEN = 4)
+// (Using https://tinyurl.com/)
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define LEN 7
 
@@ -23,19 +24,15 @@ void MergeSort(int nums[], int left, int right);
  */
 void Merge(int nums[], int left, int mid, int right);
 
+void Print(const int nums[], int len);
+
 int main() {
   int numbers[LEN] = {38, 27, 43, 3, 9, 82, 10};
+  Print(numbers, LEN);
 
-  for (int i = 0; i < LEN; i++) {
-    printf("%d ", numbers[i]);
-  }
-
-  // TODO
+  // TODO: merge sort
   MergeSort(numbers, 0, LEN - 1);
-
-  for (int i = 0; i < LEN; i++) {
-    printf("%d ", numbers[i]);
-  }
+  Print(numbers, LEN);
 
   return 0;
 }
@@ -46,19 +43,20 @@ void MergeSort(int nums[], int left, int right) {
   }
 
   int mid = (left + right) / 2;
-  MergeSort(nums, left, mid);     // ask the Mirror
+  MergeSort(nums, left, mid);       // ask the Mirror
   MergeSort(nums, mid + 1, right);  // ask the Mirror
 
   Merge(nums, left, mid, right);
 }
 
 void Merge(int nums[], int left, int mid, int right) {
-  static int copy[LEN] = {0};
+  int size = right - left + 1;
+  int *copy = malloc(size * sizeof *copy);
 
   int left_index = left;
   int right_index = mid + 1;
-  int copy_index = left;
 
+  int copy_index = 0;
   while (left_index <= mid && right_index <= right) {
     if (nums[left_index] <= nums[right_index]) {
       copy[copy_index] = nums[left_index];
@@ -83,7 +81,16 @@ void Merge(int nums[], int left, int mid, int right) {
     copy_index++;
   }
 
-  for (int i = left; i <= right; ++i) {
-    nums[i] = copy[i];
+  for (int i = 0; i < size; ++i) {
+    nums[i + left] = copy[i];
   }
+
+  free(copy);
+}
+
+void Print(const int nums[], int len) {
+  for (int i = 0; i < len; i++) {
+    printf("%d ", nums[i]);
+  }
+  printf("\n");
 }

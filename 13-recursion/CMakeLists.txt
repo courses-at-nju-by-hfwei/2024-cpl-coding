@@ -16,9 +16,9 @@ add_executable(bsearch-iter bsearch-iter.c)
 add_executable(bsearch-re bsearch-re.c)
 
 add_executable(merge-array merge.c)
-add_executable(mergesort mergesort.c)
+add_executable(mergesort-re mergesort-re.c)
 
 add_executable(n-queens n-queens.c)
 
 add_executable(hilbert-curve-text hilbert-curve-text.c)
-add_executable(hilbert-curve-ui hilbert-curve-ui.c)
+#add_executable(hilbert-curve-ui hilbert-curve-ui.c)

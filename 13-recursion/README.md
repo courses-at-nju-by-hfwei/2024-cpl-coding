@@ -11,10 +11,6 @@
   - automatic variable
 - `min-re.c`
 
-- `sum-re.c`
-  - static storage
-  - static variable
-
 - `fib-re.c`
 - `fib-iter.c`
 
@@ -24,7 +20,11 @@
 - `bsearch-iter.c`
 - `bsearch-re.c`
 
+- `mergesort-re.c`
+
 ## Backup
 
 - `hanoi.c`
+- `hilbert-curve-text.c`
+- `n-queens.c`
 - `quicksort.c`

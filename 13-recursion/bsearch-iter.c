@@ -1,6 +1,4 @@
-//
-// Created by hfwei on 2023/11/9.
-//
+// Created by hfwei on 2024/12/25.
 
 #include <stdio.h>
 
@@ -21,7 +19,7 @@
 int BinarySearch(int key, const int dict[100], int len);
 
 int main(void) {
-  const int dictionary[LEN] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+  const int dictionary[LEN] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
 
   int key = 0;
   scanf("%d", &key);

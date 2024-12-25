@@ -1,13 +1,11 @@
-//
-// Created by hfwei on 2023/11/9.
-//
+// Created by hfwei on 2024/12/25.
 
 #include <stdio.h>
 
 #define LEN 93
 
 int main() {
-  long long fibs[LEN] = { 0LL, 1LL };
+  long long fibs[LEN] = {0LL, 1LL};
 
   int n;
   scanf("%d", &n);

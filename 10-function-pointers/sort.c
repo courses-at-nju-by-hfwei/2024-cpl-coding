@@ -1,17 +1,15 @@
 // Created by hengxin on 2024/12/04.
 
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 #include <string.h>
 
 // (since C11)
 // _Generic ( controlling-expression , association-list )
 // See Section 9.7 of the textbook
-#define Print(x, y) _Generic((x), \
-    int *: PrintInts, \
-    const char **: PrintStrs \
-    )((x), (y))
+#define Print(x, y) \
+  _Generic((x), int *: PrintInts, const char **: PrintStrs)((x), (y))
 
 typedef int (*CompareFunction)(const void *, const void *);
 typedef int CompFunc(const void *, const void *);
@@ -25,7 +23,7 @@ int StrCmpStd(const char *s1, const char *s2);
 void PrintInts(const int *integers, size_t len);
 void PrintStrs(const char *str[], size_t len);
 
-int main() {
+int main(void) {
   int integers[] = {-2, 99, 0, -743, 2, INT_MIN, 4};
   int size_of_integers = sizeof integers / sizeof *integers;
 
@@ -57,16 +55,8 @@ int main() {
   printf("%d %s %d\n", a, comp(&a, &b) > 0 ? ">" : "<=", b);
 
   const char *names[] = {
-      "Luo Dayou",
-      "Cui Jian",
-      "Dou Wei",
-      "Zhang Chu",
-      "Wan Qing",
-      "Li Zhi",
-      "Yao",
-      "ZuoXiao",
-      "ErShou Rose",
-      "Hu Mage",
+      "Luo Dayou", "Cui Jian", "Dou Wei", "Zhang Chu",   "Wan Qing",
+      "Li Zhi",    "Yao",      "ZuoXiao", "ErShou Rose", "Hu Mage",
   };
   size_t size_of_names = sizeof names / sizeof *names;
 
@@ -77,15 +67,14 @@ int main() {
 
   // comp = CompareStrsWrong;
   comp = CompareStrs;
-  qsort(names, size_of_names,
-        sizeof *names, comp);
+  qsort(names, size_of_names, sizeof *names, comp);
   // PrintStrs(names, size_of_names);
   Print(names, size_of_names);
 }
 
 int CompareInts(const void *left, const void *right) {
-  int int_left = *(const int *) left;
-  int int_right = *(const int *) right;
+  int int_left = *(const int *)left;
+  int int_right = *(const int *)right;
 
   if (int_left < int_right) {
     return -1;
@@ -98,7 +87,8 @@ int CompareInts(const void *left, const void *right) {
   return 0;
 
   // return (int_left > int_right) - (int_left < int_right);
-  // return int_left - int_right; // erroneous shortcut (fails if INT_MIN is present)
+  // return int_left - int_right; // erroneous shortcut (fails if INT_MIN is
+  // present)
 }
 
 int CompareStrs(const void *left, const void *right) {
@@ -123,11 +113,10 @@ int StrCmpStd(const char *s1, const char *s2) {
   }
 
   // just for debug
-  const unsigned char s1_char = *((const unsigned char *) s1);
-  const unsigned char s2_char = *((const unsigned char *) s2);
+  const unsigned char s1_char = *((const unsigned char *)s1);
+  const unsigned char s2_char = *((const unsigned char *)s2);
 
-  return *((const unsigned char *) s1) -
-      *((const unsigned char *) s2);
+  return *((const unsigned char *)s1) - *((const unsigned char *)s2);
 }
 
 void PrintInts(const int *integers, size_t len) {
