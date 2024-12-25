@@ -1,6 +1,7 @@
+// Created by hfwei on 2024/12/25.
+
 // Euclidean algorithm:
 // gcd(a, b) = gcd(b, a % b)
-// Created by hfwei on 2024/12/25.
 
 #include <stdio.h>
 

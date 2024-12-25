@@ -7,7 +7,7 @@
 
 int Min(int a, int b);
 
-int main() {
+int main(void) {
   int a = 25;
   int b = 37;
 

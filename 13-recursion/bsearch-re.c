@@ -1,7 +1,8 @@
+// Created by hfwei on 2024/12/25.
+
 // Visualization (search for 2 as an example):
 // https://tinyurl.com/bsearch-re
 // (Using https://tinyurl.com/)
-// Created by hfwei on 2024/12/25.
 
 #include <stdio.h>
 
